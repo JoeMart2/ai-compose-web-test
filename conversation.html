@@ -1,75 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversation Export</title>
-    
-<style>
-    body {
+
+    <style>
+      body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
         margin: 20px;
         background-color: #fff;
         color: #000;
-    }
-    .conversation {
+      }
+      .conversation {
         max-width: 800px;
         margin: 0 auto;
         background: #fff;
         border: 1px solid #000;
         border-radius: 8px;
         overflow: hidden;
-    }
-    .message {
+      }
+      .message {
         padding: 15px;
         border-bottom: 1px solid #000;
-    }
-    .message:last-child {
+      }
+      .message:last-child {
         border-bottom: none;
-    }
-    .user {
+      }
+      .user {
         background: #f5f5f5;
-    }
-    .ai {
+      }
+      .ai {
         background: #eaeaea;
-    }
-    .header {
+      }
+      .header {
         background: #000;
         color: #fff;
         text-align: center;
         padding: 10px;
         font-size: 1.2em;
-    }
-    pre {
+      }
+      pre {
         background: #f5f5f5;
         padding: 10px;
         border-radius: 5px;
         overflow-x: auto;
         color: #000;
-    }
-    code {
+      }
+      code {
         font-family: monospace;
-    }
-</style>
-</head>
-<body>
+      }
+    </style>
+  </head>
+  <body>
     <div class="conversation">
-        <div class="header">Conversation Export</div>
-        <div class="message user">
-            <strong>User:</strong>
-            Can you generate the code for a responsive web page consisting of HTML and CSS (or Tailwind CSS)?
-            The web page should include the following elements:
-            1. A navigation bar that contains at least three links: Home, About, and Contact.
-            2. A contact form with fields for Name, Email, and Message. The form should also include a Submit button.
-            3. Basic styling to ensure the webpage is visually appealing and responsive.
-            Please generate the HTML code for the structure of the web page as outlined above. Then, provide the CSS or Tailwind CSS classes that apply basic styling.
-        </div>
-        <div class="message ai">
-            <strong>AI:</strong>
-            Here is the HTML structure for the responsive web page with the outlined elements:
-            <pre><code>&lt;!DOCTYPE html&gt;
+      <div class="header">Conversation Export</div>
+      <div class="message user">
+        <strong>User:</strong>
+        Can you generate the code for a responsive web page consisting of HTML and CSS (or Tailwind CSS)? The web page
+        should include the following elements: 1. A navigation bar that contains at least three links: Home, About, and
+        Contact. 2. A contact form with fields for Name, Email, and Message. The form should also include a Submit
+        button. 3. Basic styling to ensure the webpage is visually appealing and responsive. Please generate the HTML
+        code for the structure of the web page as outlined above. Then, provide the CSS or Tailwind CSS classes that
+        apply basic styling.
+      </div>
+      <div class="message ai">
+        <strong>AI:</strong>
+        Here is the HTML structure for the responsive web page with the outlined elements:
+        <pre>
+          <code>
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -119,20 +120,24 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-            </code></pre>
-        </div>
-    
-        <div class="message user">
-            <strong>User:</strong>
-            1. Remove other section and retain the Contact form section only.<br>
-            2. Update the navigation responsiveness on all screen sizes. Example:<br>
-            - Mobile must have a menu button with sidebar that shows the 3 links.<br>
-            - Desktop must show the 3 links.
-        </div>
-        <div class="message ai">
-            <strong>AI:</strong>
-            Here’s the updated HTML with only the <strong>Contact Form</strong> section retained and a fully responsive navigation bar with a menu button for mobile screens:
-            <pre><code>&lt;!DOCTYPE html&gt;
+            </code>
+          </pre>
+      </div>
+
+      <div class="message user">
+        <strong>User:</strong>
+        1. Remove other section and retain the Contact form section only.<br />
+        2. Update the navigation responsiveness on all screen sizes. Example:<br />
+        - Mobile must have a menu button with sidebar that shows the 3 links.<br />
+        - Desktop must show the 3 links.
+      </div>
+      <div class="message ai">
+        <strong>AI:</strong>
+        Here’s the updated HTML with only the <strong>Contact Form</strong> section retained and a fully responsive
+        navigation bar with a menu button for mobile screens:
+        <pre>
+          <code>
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -157,7 +162,7 @@
         &lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div id="mobileMenu" class="hidden md:hidden bg-blue-700 text-white p-4 space-y-2"&gt;
+    &lt;div id="mobileMenu" class="hidden md:hidden text-white p-4 space-y-2"&gt;
       &lt;a href="#home" class="block hover:text-gray-200"&gt;Home&lt;/a&gt;
       &lt;a href="#about" class="block hover:text-gray-200"&gt;About&lt;/a&gt;
       &lt;a href="#contact" class="block hover:text-gray-200"&gt;Contact&lt;/a&gt;
@@ -190,11 +195,21 @@
     &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
   &lt;/footer&gt;
 
+  &lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuButton.onclick = function() {
+        mobileMenu.classList.toggle('hidden');
+      };
+    });
+  &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-            </code></pre>
-        </div>
-
-</div>
-</body>
+          </code>
+        </pre>
+      </div>
+    </div>
+  </body>
 </html>
