@@ -3,61 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Web Page</title>
+  <title>Contact Us</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
-  </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 text-gray-800">
+
   <!-- Navigation Bar -->
-  <nav class="bg-blue-600 text-white shadow-md">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-lg font-bold">My Website</h1>
-      <!-- Desktop Navigation -->
-      <ul class="hidden md:flex space-x-4">
-        <li><a href="#" class="hover:underline">Home</a></li>
-        <li><a href="#about" class="hover:underline">About</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
-      </ul>
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  <nav class="bg-blue-600 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-lg font-bold">My Website</a>
+      <div class="hidden md:flex space-x-4">
+        <a href="#home" class="hover:text-gray-200">Home</a>
+        <a href="#about" class="hover:text-gray-200">About</a>
+        <a href="#contact" class="hover:text-gray-200">Contact</a>
+      </div>
+      <button id="menuButton" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
     </div>
-    <!-- Mobile Navigation -->
-    <ul id="mobile-menu" class="hidden flex flex-col space-y-2 bg-blue-700 p-4 md:hidden">
-      <li><a href="#" class="hover:underline text-white">Home</a></li>
-      <li><a href="#about" class="hover:underline text-white">About</a></li>
-      <li><a href="#contact" class="hover:underline text-white">Contact</a></li>
-    </ul>
+    <div id="mobileMenu" class="hidden md:hidden text-white p-4 space-y-2">
+      <a href="#home" class="block hover:text-gray-200">Home</a>
+      <a href="#about" class="block hover:text-gray-200">About</a>
+      <a href="#contact" class="block hover:text-gray-200">Contact</a>
+    </div>
   </nav>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-10 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-6">Contact Us</h2>
-      <form class="max-w-lg mx-auto bg-gray-50 p-6 rounded shadow">
-        <div class="mb-4">
-          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-          <input type="text" id="name" name="name" class="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Your Name">
+  <!-- Contact Form Section -->
+  <main class="container mx-auto p-4 mt-6">
+    <section id="contact" class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+      <form action="#" method="post" class="bg-white p-6 rounded-lg shadow-md space-y-4">
+        <div>
+          <label for="name" class="block text-gray-700 font-semibold">Name</label>
+          <input type="text" id="name" name="name" class="w-full mt-1 p-2 border rounded-md" placeholder="Your Name" required>
         </div>
-        <div class="mb-4">
-          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="email" name="email" class="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Your Email">
+        <div>
+          <label for="email" class="block text-gray-700 font-semibold">Email</label>
+          <input type="email" id="email" name="email" class="w-full mt-1 p-2 border rounded-md" placeholder="Your Email" required>
         </div>
-        <div class="mb-4">
-          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-          <textarea id="message" name="message" rows="4" class="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Your Message"></textarea>
+        <div>
+          <label for="message" class="block text-gray-700 font-semibold">Message</label>
+          <textarea id="message" name="message" class="w-full mt-1 p-2 border rounded-md" rows="4" placeholder="Your Message" required></textarea>
         </div>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
       </form>
-    </div>
-  </section>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuButton.onclick = function() {
+        mobileMenu.classList.toggle('hidden');
+      };
+    });
+  </script>
 </body>
 </html>
